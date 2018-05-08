@@ -154,6 +154,6 @@ int cdfel_signed(cdfel *dest, union __cdfel_private_int_union value) { // yea, b
 }
 
 void cdfel_done(cdfel *dest) {
-	if (dest->bhead != 0) dest->cb(dest->buffer, dest->bhead, dest->user_ptr);
-	dest->cb(dest->buffer, 0, dest->user_ptr);
+	if (dest->bhead != 0) dest->cb(dest->buffer, dest->bhead, dest->user_ptr), dest->bhead = 0;
+	//dest->cb(dest->buffer, 0, dest->user_ptr);
 }
